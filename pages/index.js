@@ -6,7 +6,7 @@ import feDev from '../public/assets/images/fe_dev_bg.png'
 import inDes from '../public/assets/images/interaction_design_bg.png'
 import mobDev from '../public/assets/images/mobile_dev_bg.png'
 import { MdOutlineDesignServices } from 'react-icons/md'
-import { AiOutlineMobile } from 'react-icons/ai'
+import { AiOutlineDesktop } from 'react-icons/ai'
 import { DiCodeBadge } from 'react-icons/di'
 import { VscServerProcess } from 'react-icons/vsc'
 import Contact from '../components/sections/Contact'
@@ -108,7 +108,7 @@ export default function Home() {
                 <div className='relative w-[80%]'>
                   <Image src={mobDev} alt='' />
                   <div className={styles.descriptionContainer}>
-                    <AiOutlineMobile size={50} className='' />
+                    <AiOutlineDesktop size={50} className='' />
                     <p className={styles.description}>Desktop development</p>
                   </div>
                 </div>

@@ -1,15 +1,12 @@
 import {
-    AiOutlineBehance,
-    AiOutlineCodepen,
     AiOutlineGithub,
     AiOutlineInstagram,
     AiOutlineCamera,
-    AiOutlineTwitter
+    AiOutlineTwitter,
 } from "react-icons/ai"
 import { HiOutlineNewspaper } from 'react-icons/hi'
 import { TbSwimming } from 'react-icons/tb'
 import { FaRegSnowflake, FaFly, FaBed } from 'react-icons/fa'
-import { GrLinkedinOption } from 'react-icons/gr'
 import { GiDutchBike } from 'react-icons/gi'
 import image1 from '../public/assets/images/image.webp'
 import image2 from '../public/assets/images/image (1).webp'
