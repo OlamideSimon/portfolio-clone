@@ -65,11 +65,11 @@ const About = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:px-10">
                 <div className="grid place-content-center">
-                    <div className="relative rounded-3xl w-40 sm:w-60 border-dashed border border-gray-500 p-5">
+                    <div className="relative rounded-3xl w-60 sm:w-[400px] border-dashed border border-gray-500 p-5">
                         <Image
                             src={profile}
                             alt=""
-                            className="rounded-3xl object-contain"
+                            className="rounded-3xl w-full"
                         />
                         <div className="absolute bg-blue-ryb text-center bottom-0 right-0 p-2 rounded-tr-xl rounded-bl-xl">
                             <div className="my-0 mx-auto overflow-hidden max-w-[80px] sm:max-w-[100px]">
