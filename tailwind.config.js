@@ -23,7 +23,6 @@ module.exports = {
         "blue-ryb-2": "#2b4cdcff"
       },
       "backgroundColor": {
-        "blue": '#6800FF',
         "blue-ryb": '#1e42f8ff',
       },
       "keyframes": {
