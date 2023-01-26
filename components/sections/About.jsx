@@ -72,7 +72,7 @@ const About = () => {
                             className="rounded-3xl w-full"
                         />
                         <div className="absolute bg-blue-ryb text-center bottom-0 right-0 p-2 rounded-tr-xl rounded-bl-xl">
-                            <div className="my-0 mx-auto overflow-hidden max-w-[80px] sm:max-w-[100px]">
+                            <div className="my-0 mx-auto overflow-hidden max-w-[80px]">
                                 <div className="whitespace-nowrap font-corpsansmedium transition-all duration-1000" style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
                                     {hobbies.map(({ Icon, hobbie }, index) => (
                                         <div key={index} className='inline-block h-[40px] w-full'>
