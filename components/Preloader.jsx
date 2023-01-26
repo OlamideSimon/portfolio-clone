@@ -21,7 +21,7 @@ const Preloader = () => {
 export default Preloader
 
 const styles = {
-    logoContainer: 'w-16 md:w-20 relative group cursor-pointer',
+    logoContainer: 'w-20 md:w-40 relative group cursor-pointer',
     logoImage: 'w-full animate-rotate',
     logoText: 'absolute top-0 bottom-0 left-0 right-0 grid place-content-center uppercase font-corpsansmedium font-semibold',
 }
