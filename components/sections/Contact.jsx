@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { AiOutlineCopy } from 'react-icons/ai'
 import Link from 'next/link'
 import { links } from '../../utils'
 import { motion } from 'framer-motion'
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -26,6 +26,7 @@ const item = {
 }
 
 const Contact = () => {
+  const form = useRef();
   const [isCopied, setIsCopied] = useState(false);
 
   const copyTextToClipboard = async(text) => {
@@ -51,6 +52,8 @@ const Contact = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
+
+    emailjs.sendForm('', '', form.current, '')
   }
 
   return (
@@ -73,11 +76,11 @@ const Contact = () => {
           <p className='font-semibold font-corpsansbold'>contact</p>
         </div>
         <div className={styles.formContainer}>
-          <form onSubmit={onSubmit}>
+          <form ref={form} onSubmit={onSubmit}>
             <div className="relative mt-6">
               <input
                 type="text"
-                name="name"
+                name="user_name"
                 id="name"
                 placeholder="Name"
                 className={styles.input}
@@ -86,11 +89,26 @@ const Contact = () => {
               <label htmlFor="name" className={styles.label}>Name</label>
             </div>
             <div className="relative mt-6">
-              <input type="email" name="email" id="email" placeholder="Email Address" className={styles.input} autoComplete="NA" />
+              <input
+                type="email"
+                name="user_email"
+                id="email"
+                placeholder="Email Address"
+                className={styles.input}
+                autoComplete="NA"
+              />
               <label htmlFor="email" className={styles.label}>Email</label>
             </div>
             <div className="relative mt-6">
-              <textarea rows={3} type="text" name="message" id="message" placeholder="Message" className={styles.input} autoComplete="NA" />
+              <textarea
+                rows={3}
+                type="text"
+                name="message"
+                id="message"
+                placeholder="Message"
+                className={styles.input}
+                autoComplete="NA"
+              />
               <label htmlFor="message" className={styles.label}>Message</label>
             </div>
             <div className='w-full flex justify-center md:justify-end mt-5'>
