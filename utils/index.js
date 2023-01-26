@@ -77,11 +77,11 @@ export const hobbies = [
         Icon: TbSwimming
     },
     {
-        hobbie: 'Taking Pictures',
+        hobbie: 'Taking clicks',
         Icon: AiOutlineCamera
     },
     {
-        hobbie: 'Love Snowflakes',
+        hobbie: 'Loves Snow',
         Icon: FaRegSnowflake
     },
     {

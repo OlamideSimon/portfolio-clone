@@ -55,7 +55,7 @@ const About = () => {
 
     return (
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1, transitiondelay: 0.3, transition: { ease: 'linear', delay: 0.3, duration: 0.7 } }} id="about" className="px-5 lg:px-20 space-y-10 md:space-y-0">
-            <div className="w-full md:w-[80%] text-center md:text-right">
+            <div className="w-full md:w-[70%] text-center md:text-right">
                 <p className="section-header-1">
                     know me
                 </p>
@@ -63,9 +63,9 @@ const About = () => {
                     About
                 </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:px-10">
+            <div className="flex gap-10 flex-col md:flex-row items-center md:px-10">
                 <div className="grid place-content-center">
-                    <div className="relative rounded-3xl w-60 sm:w-[400px] border-dashed border border-gray-500 p-5">
+                    <div className="relative rounded-3xl w-60 sm:w-[200px] lg:w-[400px] border-dashed border border-gray-500 p-5">
                         <Image
                             src={profile}
                             alt=""
@@ -77,7 +77,7 @@ const About = () => {
                                     {hobbies.map(({ Icon, hobbie }, index) => (
                                         <div key={index} className='inline-block h-[40px] w-full'>
                                             <Icon size={40} className='grid place-content-center w-full text-white' />
-                                            <p className="capitalize text-lg text-clip overflow-hidden">{hobbie}</p>
+                                            <p className="capitalize text-lg">{hobbie}</p>
                                         </div>
                                     ))}
                                 </div>

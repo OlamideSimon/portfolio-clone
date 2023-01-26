@@ -3,6 +3,7 @@ import { AiOutlineCopy } from 'react-icons/ai'
 import Link from 'next/link'
 import { links } from '../../utils'
 import { motion } from 'framer-motion'
+// import emailjs from '@emailjs/browser'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -132,3 +133,7 @@ const styles = {
   input: "bg-transparent peer mt-1 w-full border-b-2 border-slate-500 px-0 py-3 placeholder:text-transparent focus:border-slate-100 focus:outline-none",
   submitBtn: 'font-corpsansbold bg-blue-600 px-5 py-3 uppercase rounded-br-xl rounded-tl-xl'
 }
+
+// Service ID: service_ol8t4jf
+// Template: template_5e07m9t
+// public key: 0AqDVQbYSUqG2h6DV

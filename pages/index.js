@@ -63,7 +63,7 @@ export default function Home() {
                 <p className={styles.word}>!</p>
               </div>
               <p className={styles.name}>I&apos;m Muhammed Erdem</p>
-              <p className='text-blue'>Front-end Engineer</p>
+              <p className='text-blue-ryb-2 font-corpsansregular text-[20px]'>Front-end Engineer</p>
               <p className={styles.specialisation}>
                 Specialized in front-end development but also like trying out other
                 technologies in order to become more flexible
@@ -131,10 +131,10 @@ export default function Home() {
 const styles = {
   homeContainer: 'py-[150px] lg:py-[250px] md:flex md:items-center px-10 lg:px-20 relative',
   introContainer: 'text-center md:text-left md:w-full space-y-3 flex-1',
-  greeting: 'text-blue-ryb-2 font-blackbones text-[52px] -my-4',
+  greeting: 'text-blue-ryb-2 font-blackbones text-[30px] sm:text-[40px] lg:text-[52px] -my-4',
   word: 'hover:scale-125 cursor-pointer transition-all duration-100 inline-block',
   knowMe: 'w-fit px-5 cursor-pointer py-4 text-white font-semibold hover:scale-125 transition-all duration-100 rounded-tl-3xl rounded-br-3xl bg-blue-ryb uppercase',
-  name: 'font-corpsansbold text-[52px] font-semibold',
+  name: 'font-corpsansbold text-[30px] sm:text-[40px] lg:text-[52px] font-semibold',
   specialisation: 'text-slate-100 text-base font-thin font-corpsansregular text-xl',
   container: 'hidden md:grid place-content-center flex-1',
   relativeContainer: 'relative font-corpsansregular text-xl w-40 lg:w-full',

@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
           <link href="https://fonts.cdnfonts.com/css/black-bones-personal-use" rel="stylesheet" />
           </Head>
           <Snowfall
-            snowflakeCount={1000}
+            snowflakeCount={800}
             style={{zIndex: 999}}
           />
           <Component {...pageProps} />
