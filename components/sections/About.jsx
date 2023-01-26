@@ -131,5 +131,5 @@ const About = () => {
 export default About;
 
 const styles = {
-    skill: 'm-2 w-fit px-3 py-1 cursor-pointer text-white font-semibold hover:scale-110 transition-all duration-100 rounded-tl-xl rounded-br-xl bg-[#252b3d] hover:bg-blue-ryb uppercase'
+    skill: 'm-2 w-fit px-3 py-1 cursor-pointer text-white font-semibold hover:scale-110 transition-all duration-100 rounded-tl-xl rounded-br-xl bg-[#252b3d] hover:bg-blue-ryb uppercase select-none'
 }

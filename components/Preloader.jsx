@@ -4,7 +4,7 @@ import logo from '../public/assets/images/logo.svg'
 
 const Preloader = () => {
   return (
-    <div className='w-full h-screen bg-[#171A23] grid place-content-center z-50'>
+    <div className='w-full h-[100dvh] bg-[#171A23] grid place-content-center z-50'>
         <div className={styles.logoContainer}>
             <Image
                 src={logo}
