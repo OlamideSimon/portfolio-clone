@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useRef } from "react";
 import { hobbies } from "../../utils";
 import Image from "next/image";
+import { useTranslation, Trans } from 'react-i18next'
 
 const skills = [
     'react',
@@ -34,8 +35,9 @@ const slides = {
 
 const About = () => {
     const delay = 2500;
-    const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null);
+    const { t } = useTranslation()
+    const [index, setIndex] = useState(0);
 
     const resetTimeout = () => {
         if (timeoutRef.current) {
@@ -57,10 +59,10 @@ const About = () => {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1, transitiondelay: 0.3, transition: { ease: 'linear', delay: 0.3, duration: 0.7 } }} id="about" className="px-5 lg:px-20 space-y-10 md:space-y-0">
             <div className="w-full md:w-[70%] text-center md:text-right">
                 <p className="section-header-1">
-                    know me
+                    {t("about.header1")}
                 </p>
                 <p className="section-header-2">
-                    About
+                    {t("about.header2")}
                 </p>
             </div>
             <div className="flex gap-10 flex-col md:flex-row items-center md:px-10">
@@ -86,33 +88,26 @@ const About = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="text-base font-thin mt-[25px] mb-[30px] space-y-10 font-corpsansregular">
+                    <div className="text-lg font-thin mt-[25px] mb-[30px] space-y-10 font-corpsansregular">
                         <p>
-                            I&apos;m a Front-End Developer located in Turkey. I have a serious
-                            passion for UI effects, animations and creating intuitive, dynamic
-                            user experiences.
+                            {t("about.about.paragraph1")}
                         </p>
                         <p>
-                            My main experience is in front-end development but I also have a
-                            passion for design. Given that producing a modern website requires
-                            the combination of design, server technology, and the layer that
-                            users interacts with. I believe having experience in both design and
-                            development allows for making the most optimal user experiences.
+                            {t("about.about.paragraph2")}
                         </p>
                         <p>
-                            I&apos;ve built products for companies and businesses around the globe
-                            ranging from marketing websites to complex solutions and enterprise
-                            apps with focus on fast, elegant and accessible user experiences.
+                            {t("about.about.paragraph3")}
                         </p>
                         <p>
-                            I&apos;m a <Link href='' className="inline-link">CodePen</Link> advocate and
-                            share attention-catching demos over on{" "}
-                            <Link href='' className="inline-link">Twitter</Link>.
+                            <Trans i18nKey='about.about.paragraph4'>
+                                I&apos;m a <Link href='' className="inline-link">CodePen</Link> advocate and
+                                share attention-catching demos over on <Link href='' className="inline-link">Twitter</Link>.
+                            </Trans>
                         </p>
                     </div>
                     <div className="mt-10">
-                        <p className="font-semibold font-corpsansbold text-[26px] capitalize">
-                            best skills
+                        <p className="font-semibold font-corpsansbold text-[26px] capitalize text-center md:text-left">
+                            {t('about.bestSkills')}
                         </p>
                         <p className="flex flex-wrap mt-5 leading-10 w-full">
                             {skills.map((skill, index) => (

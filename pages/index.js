@@ -13,7 +13,7 @@ import Contact from '../components/sections/Contact'
 import { motion } from 'framer-motion'
 import About from '../components/sections/About'
 import Works from '../components/sections/Works'
-import Header from '../components/header/Header'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import shape1 from '../public/assets/images/shape_1.png'
 import shape2 from '../public/assets/images/shape_2.png'
@@ -22,6 +22,7 @@ import shape4 from '../public/assets/images/shape_4.png'
 import shape5 from '../public/assets/images/shape_5.png'
 import shape6 from '../public/assets/images/shape_6.png'
 import shape7 from '../public/assets/images/shape_7.png'
+import { useTranslation } from 'react-i18next'
 
 const container = {
   hidden: {
@@ -38,18 +39,20 @@ const container = {
 }
 
 export default function Home() {
+  const { t } = useTranslation()
+
   return (
     <div className='h-full relative'>
       <>
         <Header />
         <motion.div variants={container} initial="hidden" whileInView="show" className={styles.homeContainer}>
-          <Image src={shape5} alt='' className='w-16 absolute top-40 sm:top-20 left-5 sm:left-[20%] -z-[999]' />
-          <Image src={shape2} alt='' className='w-16 absolute top-10 sm:top-40 left-40 sm:left-1/2 -z-[999]' />
-          <Image src={shape3} alt='' className='w-16 absolute top-40 sm:top-24 right-5 sm:right-[20%] -z-[999]' />
-          <Image src={shape4} alt='' className='w-16 absolute top-[50%] right-[50%] -z-[999]' />
-          <Image src={shape1} alt='' className='w-16 absolute bottom-40 left-5 -z-[999]' />
-          <Image src={shape6} alt='' className='w-16 absolute bottom-20 sm:bottom-20 left-40 sm:left-1/2 -z-[999]' />
-          <Image src={shape7} alt='' className='w-16 absolute bottom-40 sm:bottom-24 right-5 sm:right-[20%] -z-[999]' />
+          <Image src={shape5} alt='' className='hover:scale-110 w-16 absolute top-40 sm:top-20 left-5 sm:left-[20%] -z-[999]' />
+          <Image src={shape2} alt='' className='hover:scale-110 w-16 absolute top-10 sm:top-40 left-40 sm:left-1/2 -z-[999]' />
+          <Image src={shape3} alt='' className='hover:scale-110 w-16 absolute top-40 sm:top-24 right-5 sm:right-[20%] -z-[999]' />
+          <Image src={shape4} alt='' className='hover:scale-110 w-16 absolute top-[50%] right-[50%] -z-[999]' />
+          <Image src={shape1} alt='' className='hover:scale-110 w-16 absolute bottom-40 left-5 -z-[999]' />
+          <Image src={shape6} alt='' className='hover:scale-110 w-16 absolute bottom-20 sm:bottom-20 left-40 sm:left-1/2 -z-[999]' />
+          <Image src={shape7} alt='' className='hover:scale-110 w-16 absolute bottom-40 sm:bottom-24 right-5 sm:right-[20%] -z-[999]' />
           <div className={styles.introContainer}>
               <div className={styles.greeting}>
                 <p className={styles.word}>👋</p>
@@ -62,16 +65,11 @@ export default function Home() {
                 <p className={styles.word}>s</p>
                 <p className={styles.word}>!</p>
               </div>
-              <p className={styles.name}>I&apos;m Muhammed Erdem</p>
-              <p className='text-blue-ryb-2 font-corpsansregular text-[20px]'>Front-end Engineer</p>
-              <p className={styles.specialisation}>
-                Specialized in front-end development but also like trying out other
-                technologies in order to become more flexible
-              </p>
+              <p className={styles.name}>{t("index.name")}</p>
+              <p className='text-blue-ryb-2 font-corpsansregular text-[20px] capitalize'>{t("index.profession")}</p>
+              <p className={styles.specialisation}>{t("index.intro")}</p>
               <div className='font-corpsansbold pt-5'>
-                <button className={styles.knowMe}>
-                  Know me
-                </button>
+                <button className={styles.knowMe}>{t("index.button")}</button>
               </div>
           </div>
           <div className={styles.container}>
@@ -88,7 +86,7 @@ export default function Home() {
               </div>
               <div className={`${styles.absoluteContainer} -top-32 left-20 lg:-top-40 lg:left-40`}>
                 <div className='relative'>
-                  <Image src={feDev} alt='' />
+                  <Image src={feDev} alt='' priority />
                   <div className={styles.descriptionContainer}>
                     <DiCodeBadge size={50} className='' />
                     <p className={styles.description}>Frontend development</p>
@@ -131,10 +129,10 @@ export default function Home() {
 const styles = {
   homeContainer: 'py-[150px] lg:py-[250px] md:flex md:items-center px-10 lg:px-20 relative',
   introContainer: 'text-center md:text-left md:w-full space-y-3 flex-1',
-  greeting: 'text-blue-ryb-2 font-blackbones text-[30px] sm:text-[40px] lg:text-[52px] -my-4',
+  greeting: 'text-blue-ryb-2 font-blackbones text-[40px] lg:text-[52px] -my-4',
   word: 'hover:scale-125 cursor-pointer transition-all duration-100 inline-block',
   knowMe: 'w-fit px-5 cursor-pointer py-4 text-white font-semibold hover:scale-125 transition-all duration-100 rounded-tl-3xl rounded-br-3xl bg-blue-ryb uppercase',
-  name: 'font-corpsansbold text-[30px] sm:text-[40px] lg:text-[52px] font-semibold',
+  name: 'capitalize font-corpsansbold text-[30px] sm:text-[40px] lg:text-[52px] font-semibold',
   specialisation: 'text-slate-100 text-base font-thin font-corpsansregular text-xl',
   container: 'hidden md:grid place-content-center flex-1',
   relativeContainer: 'relative font-corpsansregular text-xl w-40 lg:w-full',

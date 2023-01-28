@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import Link from 'next/link'
-import logo from '../../public/assets/images/logo.svg'
-import { navItems } from '../../utils'
+import logo from '../public/assets/images/logo.svg'
+import { navItems } from '../utils'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 const container = {
     hidden: {
@@ -23,6 +24,8 @@ const container = {
 
 const Header = () => {
     const [active, setActive] = useState(false)
+    const { t } = useTranslation()
+    // console.log(t)
 
     useEffect(() => {
         if (active) {
@@ -50,10 +53,9 @@ const Header = () => {
                         <a
                             href={link}
                             key={name}
-                            className={styles.textLink + (soon && styles.soonLink)}
+                            className={styles.textLink}
                         >
-                            {name}
-                            {soon && <button disabled className={styles.soonButton}>soon</button>}
+                            {t(`header.${name}`)}
                         </a>
                     ))}
                 </div>
@@ -75,17 +77,17 @@ const Header = () => {
                                 className={styles.textLink}
                                 onClick={() => setActive(false)}
                             >
-                                {name}
+                                {t(`header.${name}`)}
                             </a>
                         ))}
                     </div>
                     <div className={styles.contactMeContainer}>
                         <div className={styles.contactBody}>
-                            <p className='text-4xl uppercase font-bold'>do you have a project?</p>
-                            <p className='opacity-90'>I&apos;m ready for new projects</p>
+                            <p className='text-4xl uppercase font-bold'>{t('contact.question')}</p>
+                            <p className='opacity-90'>{t('contact.ready')}</p>
                         </div>
-                        <Link href='#contact' className={styles.contactButton}>
-                            Let&apos;s talk
+                        <Link href='/#contact' onClick={() => setActive(false)} className={styles.contactButton}>
+                            {t('contact.talk')}
                         </Link>
                     </div>
                 </motion.div>
@@ -104,8 +106,6 @@ const styles = {
     logoText: 'absolute top-0 bottom-0 left-0 right-0 grid place-content-center uppercase font-corpsansmedium font-semibold',
     lgContainer: 'hidden md:flex space-x-3 font-bold mr-[10px] text-[16px]',
     textLink: 'relative uppercase px-[15px] cursor-pointer',
-    soonLink: 'cursor-not-allowed text-slate-600',
-    soonButton: 'absolute text-slate-200 opacity-50 -top-7 right-0 bg-blue px-3 py-1 text-sm capitalize cursor-not-allowed rounded-tl-xl rounded-br-xl',
     smContainer: 'md:hidden bg-slate-700 rounded-tl-xl rounded-br-xl',
     stroke: 'line stroke-slate-500',
     popupContainer: 'absolute top-0 right-0 left-0 h-screen overflow-y-hidden backdrop-blur z-40 space-y-5',

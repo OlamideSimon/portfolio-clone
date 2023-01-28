@@ -1,8 +1,7 @@
 import React from 'react'
-import Link from 'next/link'
 import Work from '../components/Work'
 import { works } from '../utils'
-import Header from '../components/header/Header'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Contact from '../components/sections/Contact'
 

@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import React, { useState } from 'react'
 import Snowfall from 'react-snowfall'
 import Preloader from '../components/Preloader';
 import '../styles/globals.css'
+import '../i18n'
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -17,9 +17,6 @@ function MyApp({ Component, pageProps }) {
     <>
       {!loading ? (
         <div className='relative'>
-          <Head>
-          <link href="https://fonts.cdnfonts.com/css/black-bones-personal-use" rel="stylesheet" />
-          </Head>
           <Snowfall
             snowflakeCount={800}
             style={{zIndex: 999}}

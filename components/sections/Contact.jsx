@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { links } from '../../utils'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import { useTranslation } from 'react-i18next'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -27,6 +28,7 @@ const item = {
 
 const Contact = () => {
   const form = useRef();
+  const { t } = useTranslation()
   const [isCopied, setIsCopied] = useState(false);
 
   const copyTextToClipboard = async(text) => {
@@ -59,21 +61,21 @@ const Contact = () => {
   return (
     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1, transitiondelay: 0.3, transition: { ease: 'linear', delay: 0.3, duration: 0.7 } }}>
       <p className='w-full text-center mb-40 md:mb-60'>
-        <q className='text-slate-700 text-4xl md:text-5xl text-center font-blackbones'>Be who you needed when you were younger</q>
+        <q className='text-slate-700 text-4xl md:text-5xl text-center font-blackbones'>{t('contact.quote')}</q>
       </p>
       <div className='bg-[#252437] md:px-20 py-10 relative'>
         <div className='bg-blue-ryb font-corpsansmedium rounded-br-3xl rounded-tl-3xl p-10 lg:p-20 absolute -top-20 right-5 left-5 md:right-20 md:left-20 text-center md:flex md:justify-between items-center'>
           <div className='md:text-left mb-5 md:mb-0'>
-            <p className='text-4xl uppercase font-bold'>do you have a project?</p>
-            <p className='opacity-90'>I&apos;m ready for new projects</p>
+            <p className='text-4xl uppercase font-bold'>{t('contact.question')}</p>
+            <p className='opacity-90'>{t('contact.ready')}</p>
           </div>
           <Link href='#contact' className='uppercase font-semibold rounded-br-xl rounded-tl-xl px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-400 hover:scale-110 transition-all duration-100'>
-            Let&apos;s talk
+            {t('contact.talk')}
           </Link>
         </div>
         <div className='w-full text-center capitalize text-3xl md:text-5xl mt-40' id='contact'>
-          <p className='font-light text-blue-ryb-2 font-blackbones'>let&apos;s talk</p>
-          <p className='font-semibold font-corpsansbold'>contact</p>
+          <p className='font-light text-blue-ryb-2 font-blackbones'>{t('contact.header1')}</p>
+          <p className='font-semibold font-corpsansbold'>{t('contact.header2')}</p>
         </div>
         <div className={styles.formContainer}>
           <form ref={form} onSubmit={onSubmit}>
@@ -132,8 +134,8 @@ const Contact = () => {
                 </motion.a>
               ))}
             </motion.div>
-            <div className='w-full flex p-2 items-center relative group rounded-tl-3xl cursor-pointer bg-[#252430] hover:bg-blue-600 rounded-br-xl' onClick={onClickCopy}>
-              <AiOutlineCopy size={40} className='rounded-tl-xl top-0 left-0 bottom-0 bg-slate-500 h-full w-[20%] sm:w-16 p-3 group-hover:bg-blue-800' />
+            <div className='w-full flex p-2 items-center relative group rounded-tl-3xl cursor-pointer bg-slate-900 hover:bg-blue-600 rounded-br-xl' onClick={onClickCopy}>
+              <AiOutlineCopy size={40} className='rounded-tl-xl top-0 left-0 bottom-0 bg-slate-500 h-full w-[20%] sm:w-12 md:w-16 p-3 group-hover:bg-blue-800' />
               <p className='flex-1 text-center p-3 rounded-br-xl font-corpsansmedium text-2xl w-[80%]'>{isCopied ? 'Copied': 'sample@gmail.com'}</p>
             </div>
           </div>

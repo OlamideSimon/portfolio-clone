@@ -13,19 +13,19 @@ import image2 from '../public/assets/images/image (1).webp'
 
 export const navItems = [
     {
-        name: 'Home',
+        name: 'home',
         link: '/'
     },
     {
-        name: 'About',
+        name: 'about',
         link: '/#about'
     },
     {
-        name: 'Works',
+        name: 'works',
         link: '/#works'
     },
     {
-        name: 'Contact',
+        name: 'contact',
         link: '/#contact'
     },
 ]
