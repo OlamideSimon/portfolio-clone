@@ -3,6 +3,7 @@ import Snowfall from 'react-snowfall'
 import Preloader from '../components/Preloader';
 import '../styles/globals.css'
 import '../i18n'
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -15,6 +16,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <meta name='theme-color' content='#1e42f8ff' />
+        <title>Muhammed Erdem</title>
+      </Head>
       {!loading ? (
         <div className='relative'>
           <Snowfall

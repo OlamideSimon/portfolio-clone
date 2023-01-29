@@ -52,44 +52,44 @@ export const works = [
 export const links = [
     {
         name: 'github',
-        link: 'https://github.com/sample',
+        link: 'github.com/sample',
         Icon: AiOutlineGithub
     },
     {
         name: 'instagram',
-        link: 'https://instagram.com/sample',
+        link: 'instagram.com/sample',
         Icon: AiOutlineInstagram
     },
     {
         name: 'twitter',
-        link: 'https://twitter.com/sample',
+        link: 'twitter.com/sample',
         Icon: AiOutlineTwitter
     },
 ]
 
 export const hobbies = [
     {
-        hobbie: 'Reading',
+        hobbie: 'reading',
         Icon: HiOutlineNewspaper
     },
     {
-        hobbie: 'Swimming',
+        hobbie: 'swimming',
         Icon: TbSwimming
     },
     {
-        hobbie: 'Taking clicks',
+        hobbie: 'photography',
         Icon: AiOutlineCamera
     },
     {
-        hobbie: 'Loves Snow',
+        hobbie: 'loves snow',
         Icon: FaRegSnowflake
     },
     {
-        hobbie: 'Flying',
+        hobbie: 'flying',
         Icon: FaFly
     },
     {
-        hobbie: 'Sleeping',
+        hobbie: 'sleeping',
         Icon: FaBed
     },
     {

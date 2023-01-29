@@ -55,15 +55,9 @@ export default function Home() {
           <Image src={shape7} alt='' className='hover:scale-110 w-16 absolute bottom-40 sm:bottom-24 right-5 sm:right-[20%] -z-[999]' />
           <div className={styles.introContainer}>
               <div className={styles.greeting}>
-                <p className={styles.word}>👋</p>
-                <p className={styles.word}>H</p>
-                <p className={`${styles.word} mr-2`}>i{" "}</p>
-                <p className={styles.word}>F</p>
-                <p className={styles.word}>o</p>
-                <p className={styles.word}>l</p>
-                <p className={styles.word}>k</p>
-                <p className={styles.word}>s</p>
-                <p className={styles.word}>!</p>
+                {t("index.greeting").split().map((word, index) => (
+                  <p key={index} className={styles.word}>{word}</p>
+                ))}
               </div>
               <p className={styles.name}>{t("index.name")}</p>
               <p className='text-blue-ryb-2 font-corpsansregular text-[20px] capitalize'>{t("index.profession")}</p>
@@ -80,7 +74,7 @@ export default function Home() {
                   <Image src={web} alt='' />
                   <div className={styles.descriptionContainer}>
                     <VscServerProcess size={50} className='' />
-                    <p className={styles.description}>Web development</p>
+                    <p className={styles.description}>{t('index.web')}</p>
                   </div>
                 </div>
               </div>
@@ -89,7 +83,7 @@ export default function Home() {
                   <Image src={feDev} alt='' priority />
                   <div className={styles.descriptionContainer}>
                     <DiCodeBadge size={50} className='' />
-                    <p className={styles.description}>Frontend development</p>
+                    <p className={styles.description}>{t('index.front')}</p>
                   </div>
                 </div>
               </div>
@@ -98,7 +92,7 @@ export default function Home() {
                   <Image src={inDes} alt='' />
                   <div className={styles.descriptionContainer}>
                     <MdOutlineDesignServices size={50} className='' />
-                    <p className={styles.description}>Interaction design</p>
+                    <p className={styles.description}>{t('index.design')}</p>
                   </div>
                 </div>
               </div>
@@ -107,7 +101,7 @@ export default function Home() {
                   <Image src={mobDev} alt='' />
                   <div className={styles.descriptionContainer}>
                     <AiOutlineDesktop size={50} className='' />
-                    <p className={styles.description}>Desktop development</p>
+                    <p className={styles.description}>{t('index.desktop')}</p>
                   </div>
                 </div>
               </div>
@@ -138,5 +132,5 @@ const styles = {
   relativeContainer: 'relative font-corpsansregular text-xl w-40 lg:w-full',
   absoluteContainer: 'w-full hover-scale absolute',
   descriptionContainer: 'w-full h-full text-center absolute top-0 right-0 flex justify-center items-center flex-col',
-  description: 'break-words w-28'
+  description: 'break-words w-28 capitalize'
 }

@@ -88,7 +88,7 @@ const Contact = () => {
                 className={styles.input}
                 autoComplete="NA"
               />
-              <label htmlFor="name" className={styles.label}>Name</label>
+              <label htmlFor="name" className={styles.label}>{t('contact.form.name')}</label>
             </div>
             <div className="relative mt-6">
               <input
@@ -99,7 +99,7 @@ const Contact = () => {
                 className={styles.input}
                 autoComplete="NA"
               />
-              <label htmlFor="email" className={styles.label}>Email</label>
+              <label htmlFor="email" className={styles.label}>{t('contact.form.email')}</label>
             </div>
             <div className="relative mt-6">
               <textarea
@@ -111,19 +111,19 @@ const Contact = () => {
                 className={styles.input}
                 autoComplete="NA"
               />
-              <label htmlFor="message" className={styles.label}>Message</label>
+              <label htmlFor="message" className={styles.label}>{t('contact.form.message')}</label>
             </div>
             <div className='w-full flex justify-center md:justify-end mt-5'>
               <button className={styles.submitBtn} type='submit'>
-                send message
+                {t('contact.sendButton')}
               </button>
             </div>
           </form>
 
-          <div className='w-full'>
+          <div className='w-full space-y-5'>
             <motion.div variants={container} initial='hidden' animate='visible' className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
               {links.map(({ Icon, link, name }, index) => (
-                <motion.a variants={item} initial='hidden' animate='visible' href={link} target='_blank' key={index} className='hover:bg-slate-900 p-5 transition-all duration-300 rounded' rel="noreferrer">
+                <motion.a variants={item} initial='hidden' animate='visible' href={`https://${link}`} target='_blank' key={index} className='hover:bg-slate-900 p-3 transition-all duration-300 rounded' rel="noreferrer">
                   <div className='flex items-center space-x-4'>
                     <Icon size={40} />
                     <div className='flex-1'>
@@ -134,9 +134,9 @@ const Contact = () => {
                 </motion.a>
               ))}
             </motion.div>
-            <div className='w-full flex p-2 items-center relative group rounded-tl-3xl cursor-pointer bg-slate-900 hover:bg-blue-600 rounded-br-xl' onClick={onClickCopy}>
-              <AiOutlineCopy size={40} className='rounded-tl-xl top-0 left-0 bottom-0 bg-slate-500 h-full w-[20%] sm:w-12 md:w-16 p-3 group-hover:bg-blue-800' />
-              <p className='flex-1 text-center p-3 rounded-br-xl font-corpsansmedium text-2xl w-[80%]'>{isCopied ? 'Copied': 'sample@gmail.com'}</p>
+            <div className='w-full flex items-center relative group rounded-tl-xl cursor-pointer bg-slate-900 hover:bg-blue-600 rounded-br-xl' onClick={onClickCopy}>
+              <AiOutlineCopy size={40} className='rounded-tl-xl top-0 left-0 bottom-0 bg-slate-500 h-full w-[20%] sm:w-16 p-3 group-hover:bg-blue-800' />
+              <p className='flex-1 text-center rounded-br-xl font-corpsansmedium text-2xl w-[80%]'>{isCopied ? t("contact.copied"): 'sample@gmail.com'}</p>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default Contact
 
 const styles = {
   formContainer: 'grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 items-end',
-  label: "pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-white opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-slate-500",
+  label: "capitalize pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-white opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-slate-500",
   input: "bg-transparent peer mt-1 w-full border-b-2 border-slate-500 px-0 py-3 placeholder:text-transparent focus:border-slate-100 focus:outline-none",
   submitBtn: 'font-corpsansbold bg-blue-600 px-5 py-3 uppercase rounded-br-xl rounded-tl-xl'
 }

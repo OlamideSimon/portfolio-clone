@@ -79,7 +79,7 @@ const About = () => {
                                     {hobbies.map(({ Icon, hobbie }, index) => (
                                         <div key={index} className='inline-block h-[40px] w-full'>
                                             <Icon size={40} className='grid place-content-center w-full text-white' />
-                                            <p className="capitalize text-lg">{hobbie}</p>
+                                            <p className="capitalize text-lg">{t(`about.hobbies.${hobbie}`)}</p>
                                         </div>
                                     ))}
                                 </div>

@@ -23,5 +23,5 @@ export default Preloader
 const styles = {
     logoContainer: 'w-20 md:w-40 relative group cursor-pointer',
     logoImage: 'w-full animate-rotate',
-    logoText: 'absolute top-0 bottom-0 left-0 right-0 grid place-content-center uppercase font-corpsansmedium font-semibold',
+    logoText: 'sm:text-2xl md:text-5xl absolute top-0 bottom-0 left-0 right-0 grid place-content-center uppercase font-corpsansmedium font-semibold',
 }

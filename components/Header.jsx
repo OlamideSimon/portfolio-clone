@@ -25,7 +25,6 @@ const container = {
 const Header = () => {
     const [active, setActive] = useState(false)
     const { t } = useTranslation()
-    // console.log(t)
 
     useEffect(() => {
         if (active) {
