@@ -21,7 +21,7 @@ i18n
             "contact": 'contact',
           },
           "index": {
-            "greeting": '👋Hi Folks!',
+            "greeting": 'Hi Folks!',
             "name": "I'm Muhammed Erdem",
             "profession": 'Front-end Engineer',
             "intro": "Specialized in front-end development but also like trying out other technologies in order to become more flexible",
@@ -81,7 +81,7 @@ i18n
             "contact": 'temas',
           },
           "index": {
-            "greeting": '👋Merhaba millet!',
+            "greeting": 'Merhaba millet!',
             "name": 'ben muhammed erdem',
             "profession": 'Ön Uç Mühendisi',
             "intro": 'ön uç geliştirmede uzman ama ayni zamanda daha esnek olmak için diğer teknolojileri denemeyi seviyor.',

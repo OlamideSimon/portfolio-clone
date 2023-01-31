@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import centerBox from '../public/assets/images/center_box_bg.png'
 import web from '../public/assets/images/web_animation_bg.png'
 import feDev from '../public/assets/images/fe_dev_bg.png'
@@ -18,8 +18,8 @@ import Footer from '../components/Footer'
 import shape1 from '../public/assets/images/shape_1.png'
 import shape2 from '../public/assets/images/shape_2.png'
 import shape3 from '../public/assets/images/shape_3.png'
-import shape4 from '../public/assets/images/shape_4.png'
-import shape5 from '../public/assets/images/shape_5.png'
+import shape5 from '../public/assets/images/shape_4.png'
+import shape4 from '../public/assets/images/shape_5.png'
 import shape6 from '../public/assets/images/shape_6.png'
 import shape7 from '../public/assets/images/shape_7.png'
 import { useTranslation } from 'react-i18next'
@@ -40,23 +40,33 @@ const container = {
 
 export default function Home() {
   const { t } = useTranslation()
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  const mouseMove = (e) => {
+    console.log(e.clientX, e.clientY)
+
+    setX(e.clientX / 20)
+    setY(e.clientY / 20)
+  }
 
   return (
-    <div className='h-full relative'>
+    <div className='h-full relative' onMouseMove={mouseMove}>
       <>
         <Header />
         <motion.div variants={container} initial="hidden" whileInView="show" className={styles.homeContainer}>
-          <Image src={shape5} alt='' className='hover:scale-110 w-16 absolute top-40 sm:top-20 left-5 sm:left-[20%] -z-[999]' />
-          <Image src={shape2} alt='' className='hover:scale-110 w-16 absolute top-10 sm:top-40 left-40 sm:left-1/2 -z-[999]' />
-          <Image src={shape3} alt='' className='hover:scale-110 w-16 absolute top-40 sm:top-24 right-5 sm:right-[20%] -z-[999]' />
-          <Image src={shape4} alt='' className='hover:scale-110 w-16 absolute top-[50%] right-[50%] -z-[999]' />
-          <Image src={shape1} alt='' className='hover:scale-110 w-16 absolute bottom-40 left-5 -z-[999]' />
-          <Image src={shape6} alt='' className='hover:scale-110 w-16 absolute bottom-20 sm:bottom-20 left-40 sm:left-1/2 -z-[999]' />
-          <Image src={shape7} alt='' className='hover:scale-110 w-16 absolute bottom-40 sm:bottom-24 right-5 sm:right-[20%] -z-[999]' />
+          <Image src={shape1} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-40 sm:top-20 left-10 sm:left-20 -z-[999]' />
+          <Image src={shape2} alt='' className='hover:scale-110 w-16 absolute top-10 sm:top-12 left-40 sm:left-1/2 -z-[999]' />
+          <Image src={shape3} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-56 right-20 -z-[999]' />
+          <Image src={shape4} alt='' className='hover:scale-110 w-16 absolute bottom-40 left-[30%] -z-[999]' />
+          <Image src={shape5} alt='' className='hover:scale-110 w-16 md:w-28 absolute bottom-52 left-20 -z-[999]' />
+          <Image src={shape6} alt='' className='hover:scale-110 w-16 md:w-28 absolute bottom-20 sm:bottom-20 left-40 sm:left-1/2 -z-[999]' />
+          <Image src={shape7} alt='' className='hover:scale-110 w-10 absolute bottom-40 md:bottom-80 right-5 md:right-20 -z-[999]' />
           <div className={styles.introContainer}>
               <div className={styles.greeting}>
-                {t("index.greeting").split().map((word, index) => (
-                  <p key={index} className={styles.word}>{word}</p>
+                <span>👋</span>
+                {t("index.greeting").split("").map((word, index) => (
+                  <span key={index} className={styles.word}>{word}</span>
                 ))}
               </div>
               <p className={styles.name}>{t("index.name")}</p>
@@ -67,7 +77,7 @@ export default function Home() {
               </div>
           </div>
           <div className={styles.container}>
-            <div className={styles.relativeContainer}>
+            <div className={styles.relativeContainer} style={{left: x, top: y}}>
               <Image src={centerBox} alt='' />
               <div className={`-top-20 right-20 lg:-top-24 lg:right-24 ${styles.absoluteContainer}`}>
                 <div className='relative w-[80%]'>
@@ -121,11 +131,11 @@ export default function Home() {
 
 
 const styles = {
-  homeContainer: 'py-[150px] lg:py-[250px] md:flex md:items-center px-10 lg:px-20 relative',
+  homeContainer: 'py-[150px] lg:pb-[250px] lg:pt-[150px] md:flex md:items-center px-10 lg:px-20 relative',
   introContainer: 'text-center md:text-left md:w-full space-y-3 flex-1',
   greeting: 'text-blue-ryb-2 font-blackbones text-[40px] lg:text-[52px] -my-4',
-  word: 'hover:scale-125 cursor-pointer transition-all duration-100 inline-block',
-  knowMe: 'w-fit px-5 cursor-pointer py-4 text-white font-semibold hover:scale-125 transition-all duration-100 rounded-tl-3xl rounded-br-3xl bg-blue-ryb uppercase',
+  word: 'cursor-pointer hover:scale-150 duration-100 transition-all inline-block whitespace-pre',
+  knowMe: 'w-fit px-5 cursor-pointer py-4 text-white font-semibold hover:scale-110 transition-all duration-200 rounded-tl-xl rounded-br-xl bg-blue-ryb uppercase',
   name: 'capitalize font-corpsansbold text-[30px] sm:text-[40px] lg:text-[52px] font-semibold',
   specialisation: 'text-slate-100 text-base font-thin font-corpsansregular text-xl',
   container: 'hidden md:grid place-content-center flex-1',

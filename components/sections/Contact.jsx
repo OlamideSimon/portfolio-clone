@@ -151,7 +151,7 @@ const styles = {
   formContainer: 'grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 items-end',
   label: "capitalize pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-white opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-slate-500",
   input: "bg-transparent peer mt-1 w-full border-b-2 border-slate-500 px-0 py-3 placeholder:text-transparent focus:border-slate-100 focus:outline-none",
-  submitBtn: 'font-corpsansbold bg-blue-600 px-5 py-3 uppercase rounded-br-xl rounded-tl-xl'
+  submitBtn: 'font-corpsansbold bg-blue-600 px-5 py-3 uppercase rounded-br-xl rounded-tl-xl hover:scale-110 transition-all duration-100'
 }
 
 // Service ID: service_ol8t4jf

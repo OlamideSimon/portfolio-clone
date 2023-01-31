@@ -22,10 +22,10 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {!loading ? (
         <div className='relative'>
-          <Snowfall
+          {/* <Snowfall
             snowflakeCount={800}
             style={{zIndex: 999}}
-          />
+          /> */}
           <Component {...pageProps} />
         </div>
       ): (
