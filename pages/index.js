@@ -55,13 +55,15 @@ export default function Home() {
       <>
         <Header />
         <motion.div variants={container} initial="hidden" whileInView="show" className={styles.homeContainer}>
-          <Image src={shape1} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-40 sm:top-20 left-10 sm:left-20 -z-[999]' />
-          <Image src={shape2} alt='' className='hover:scale-110 w-16 absolute top-10 sm:top-12 left-40 sm:left-1/2 -z-[999]' />
-          <Image src={shape3} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-56 right-20 -z-[999]' />
-          <Image src={shape4} alt='' className='hover:scale-110 w-16 absolute bottom-40 left-[30%] -z-[999]' />
-          <Image src={shape5} alt='' className='hover:scale-110 w-16 md:w-28 absolute bottom-52 left-20 -z-[999]' />
-          <Image src={shape6} alt='' className='hover:scale-110 w-16 md:w-28 absolute bottom-20 sm:bottom-20 left-40 sm:left-1/2 -z-[999]' />
-          <Image src={shape7} alt='' className='hover:scale-110 w-10 absolute bottom-40 md:bottom-80 right-5 md:right-20 -z-[999]' />
+          <div className='absolute top-0 bottom-0 right-0 left-0 -z-[999]' style={{left: -x, top: -y}}>
+            <Image src={shape1} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-40 sm:top-20 left-10 sm:left-20 ' />
+            <Image src={shape2} alt='' className='hover:scale-110 w-16 absolute top-10 sm:top-12 left-40 sm:left-1/2' />
+            <Image src={shape3} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-56 right-20' />
+            <Image src={shape4} alt='' className='hover:scale-110 w-16 absolute bottom-40 left-[30%]' />
+            <Image src={shape5} alt='' className='hover:scale-110 w-16 md:w-28 absolute bottom-52 left-20' />
+            <Image src={shape6} alt='' className='hover:scale-110 w-16 md:w-28 absolute bottom-20 sm:bottom-20 left-40 sm:left-1/2' />
+            <Image src={shape7} alt='' className='hover:scale-110 w-10 absolute bottom-40 md:bottom-80 right-5 md:right-20' />
+          </div>
           <div className={styles.introContainer}>
               <div className={styles.greeting}>
                 <span>👋</span>
@@ -77,7 +79,7 @@ export default function Home() {
               </div>
           </div>
           <div className={styles.container}>
-            <div className={styles.relativeContainer} style={{left: x, top: y}}>
+            <div className={styles.relativeContainer} style={{left: -x, top: -y}}>
               <Image src={centerBox} alt='' />
               <div className={`-top-20 right-20 lg:-top-24 lg:right-24 ${styles.absoluteContainer}`}>
                 <div className='relative w-[80%]'>
