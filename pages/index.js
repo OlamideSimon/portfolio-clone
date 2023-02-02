@@ -46,8 +46,8 @@ export default function Home() {
   const mouseMove = (e) => {
     console.log(e.clientX, e.clientY)
 
-    setX(e.clientX / 20)
-    setY(e.clientY / 20)
+    setX(e.clientX / 30)
+    setY(e.clientY / 30)
   }
 
   return (
@@ -55,7 +55,7 @@ export default function Home() {
       <>
         <Header />
         <motion.div variants={container} initial="hidden" whileInView="show" className={styles.homeContainer}>
-          <div className='absolute top-0 bottom-0 right-0 left-0 -z-[999]' style={{left: -x, top: -y}}>
+          <div className='absolute top-0 bottom-0 right-0 left-0 -z-[999]' style={{left: x, top: y}}>
             <Image src={shape1} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-40 sm:top-20 left-10 sm:left-20 ' />
             <Image src={shape2} alt='' className='hover:scale-110 w-16 absolute top-10 sm:top-12 left-40 sm:left-1/2' />
             <Image src={shape3} alt='' className='hover:scale-110 w-16 md:w-28 absolute top-56 right-20' />
@@ -133,7 +133,7 @@ export default function Home() {
 
 
 const styles = {
-  homeContainer: 'py-[150px] lg:pb-[250px] lg:pt-[150px] md:flex md:items-center px-10 lg:px-20 relative',
+  homeContainer: 'py-[150px] lg:pb-[250px] lg:pt-[200px] md:flex md:items-center px-10 lg:px-20 relative',
   introContainer: 'text-center md:text-left md:w-full space-y-3 flex-1',
   greeting: 'text-blue-ryb-2 font-blackbones text-[40px] lg:text-[52px] -my-4',
   word: 'cursor-pointer hover:scale-150 duration-100 transition-all inline-block whitespace-pre',
